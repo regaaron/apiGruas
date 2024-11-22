@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "aaron",
+    "apellido": "lopez",
+    "direccion": "calle mar del norte 209",
+    "telefono": "4493877833",
+    "email": "aaron_lopez222@hotmail.com",
+    "id": 1
+  },
+  {
+    "nombre": "omar",
+    "apellido": "reyes",
+    "direccion": "calle 10",
+    "telefono": "4493877821",
+    "email": "omarReyes@hotmail.com",
+    "id": 2
+  },
+  {
+    "nombre": "alan",
+    "apellido": "kalet",
+    "direccion": "calle 9",
+    "telefono": "4493877837",
+    "email": "alanKalet@hotmail.com",
+    "id": 3
+  }
+]
