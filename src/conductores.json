@@ -16,11 +16,11 @@
     "id": 2
   },
   {
-    "nombre": "alan",
-    "apellido": "kalet",
-    "direccion": "calle 9",
-    "telefono": "4493877837",
-    "email": "alanKalet@hotmail.com",
+    "nombre": "ivan",
+    "apellido": "reyes",
+    "direccion": "calle 123",
+    "telefono": "4493877821",
+    "email": "ivanReyes@hotmail.com",
     "id": 3
   }
 ]
