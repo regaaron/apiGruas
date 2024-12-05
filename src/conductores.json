@@ -22,5 +22,13 @@
     "telefono": "4493877821",
     "email": "ivanReyes@hotmail.com",
     "id": 3
+  },
+  {
+    "nombre": "uzziel",
+    "apellido": "nava",
+    "direccion": "calle 123",
+    "telefono": "123",
+    "email": "aaron_lopez222@hotmail.com",
+    "id": 4
   }
 ]
