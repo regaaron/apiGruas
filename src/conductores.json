@@ -5,7 +5,12 @@
     "direccion": "calle mar del norte 209",
     "telefono": "4493877833",
     "email": "aaron_lopez222@hotmail.com",
-    "id": 1
+    "id": 1,
+    "ubicacion": {
+      "latitud": 21.916697, 
+      "longitud": -102.314467,
+        "activo": true
+      }
   },
   {
     "nombre": "omar",
@@ -13,7 +18,12 @@
     "direccion": "calle 10",
     "telefono": "4493877821",
     "email": "omarReyes@hotmail.com",
-    "id": 2
+    "id": 2,
+    "ubicacion": {
+      "latitud": 21.916697, 
+      "longitud": -102.314467,
+      "activo": false
+    }
   },
   {
     "nombre": "ivan",
@@ -21,7 +31,12 @@
     "direccion": "calle 123",
     "telefono": "4493877821",
     "email": "ivanReyes@hotmail.com",
-    "id": 3
+    "id": 3,
+    "ubicacion": {
+      "latitud": 21.878094,
+      "longitud":  -102.271532,
+      "activo": true
+    }
   },
   {
     "nombre": "uzziel",
@@ -29,6 +44,11 @@
     "direccion": "calle 123",
     "telefono": "123",
     "email": "aaron_lopez222@hotmail.com",
-    "id": 4
+    "id": 4,
+    "ubicacion": {
+        "latitud": 21.920452,
+        "longitud": -102.299874,
+        "activo": true
+      }
   }
 ]
