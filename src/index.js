@@ -12,11 +12,14 @@ app.use(express.json());
 const conductoresRoutes = require('./routes/conductores');
 const gruasRoutes = require('./routes/gruas');
 const clientesRoutes = require('./routes/clientes');
+const ubicacionesConductoresRoutes = require('./routes/ubicacionesConductores');
 
 // Usa las rutas de conductores
 app.use('/', conductoresRoutes);  
 app.use('/', gruasRoutes);
 app.use('/', clientesRoutes);
+app.use('/', ubicacionesConductoresRoutes);
+
 
 
 // Inicia el servidor en el puerto 3000

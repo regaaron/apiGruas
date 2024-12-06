@@ -25,5 +25,14 @@
     "nombre": "Omar",
     "password": "12345",
     "telefono": "748572757271"
+  },
+  {
+    "apellido": "lopez ramirez",
+    "direccion": "jfj que me lo dijera ",
+    "email": "aaron@gmail.com",
+    "id": 4,
+    "nombre": "aaron",
+    "password": "4321",
+    "telefono": "4827264"
   }
 ]
