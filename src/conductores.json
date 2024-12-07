@@ -10,7 +10,8 @@
       "latitud": 21.916697, 
       "longitud": -102.314467,
         "activo": true
-      }
+      },
+    "password": "12345"
   },
   {
     "nombre": "omar",
@@ -23,7 +24,8 @@
       "latitud": 21.916697, 
       "longitud": -102.314467,
       "activo": false
-    }
+    },
+    "password": "12345"
   },
   {
     "nombre": "ivan",
@@ -36,7 +38,8 @@
       "latitud": 21.878094,
       "longitud":  -102.271532,
       "activo": true
-    }
+    },
+    "password": "12345"
   },
   {
     "nombre": "uzziel",
@@ -49,6 +52,7 @@
         "latitud": 21.920452,
         "longitud": -102.299874,
         "activo": true
-      }
+      },
+    "password": "12345"
   }
 ]
