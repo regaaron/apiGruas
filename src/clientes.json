@@ -23,7 +23,8 @@
     "ubicacion": {
       "latitud": 21.916697, 
       "longitud": -102.314467,
-        "activo": true
+        "activo": true,
+        "atendido": false
       },
     "id": 2
   },
@@ -37,7 +38,8 @@
     "ubicacion": {
       "latitud": 21.916697, 
       "longitud": -102.314467,
-        "activo": true
+        "activo": true,
+        "atendido": false
       },
     "telefono": "748572757271"
   },
@@ -51,7 +53,8 @@
     "ubicacion": {
       "latitud": 21.916697, 
       "longitud": -102.314467,
-        "activo": true
+        "activo": true,
+        "atendido": false
       },
     "telefono": "4827264"
   }
