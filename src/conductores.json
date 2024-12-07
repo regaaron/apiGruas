@@ -10,7 +10,7 @@
       "latitud": 21.916697, 
       "longitud": -102.314467,
         "activo": false,
-        "atendiendo": false
+        "atendido": false
       },
     "password": "12345"
   },
@@ -25,7 +25,7 @@
       "latitud": 21.916697, 
       "longitud": -102.314467,
       "activo": false,
-      "atendiendo": false
+      "atendido": false
     },
     "password": "12345"
   },
@@ -40,7 +40,7 @@
       "latitud": 21.878094,
       "longitud":  -102.271532,
       "activo": true,
-      "atendiendo": false
+      "atendido": false
     },
     "password": "12345"
   },
@@ -55,7 +55,7 @@
         "latitud": 21.920452,
         "longitud": -102.299874,
         "activo": false,
-        "atendiendo": false
+        "atendido": false
       },
     "password": "12345"
   }

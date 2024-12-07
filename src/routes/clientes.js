@@ -72,44 +72,45 @@ router.get('/ver-clientes', async (req, res) => {
       res.status(500).json({ error: 'Ocurrió un error al obtener los clientes' });
     }
   });
+  
 
-
-  // Ruta PUT para actualizar la ubicación de un cliente
-router.put('/actualizar-ubicacion/:id', async (req, res) => {
-  try {
-    const { id } = req.params; // Obtener el ID desde los parámetros de la ruta
-    const { latitud, longitud, activo } = req.body; // Obtener la nueva ubicación desde el cuerpo de la solicitud
-
-    // Leer los clientes desde el archivo
-    const clientes = await readClientesFile();
-
-    // Buscar el cliente por ID
-    const clienteIndex = clientes.findIndex(cliente => cliente.id === parseInt(id));
-
-    if (clienteIndex === -1) {
-      return res.status(404).json({ error: 'Cliente no encontrado' });
+  router.put('/actualizar-ubicacion/:id', async (req, res) => {
+    try {
+      const { id } = req.params; // Obtener el ID desde los parámetros de la ruta
+      const { latitud, longitud, activo, atendido } = req.body; // Obtener la nueva ubicación y atendido desde el cuerpo de la solicitud
+  
+      // Leer los clientes desde el archivo
+      const clientes = await readClientesFile();
+  
+      // Buscar el cliente por ID
+      const clienteIndex = clientes.findIndex(cliente => cliente.id === parseInt(id));
+  
+      if (clienteIndex === -1) {
+        return res.status(404).json({ error: 'Cliente no encontrado' });
+      }
+  
+      // Actualizar los valores de la ubicación del cliente, incluyendo atendido
+      clientes[clienteIndex].ubicacion = {
+        latitud: latitud !== undefined ? latitud : clientes[clienteIndex].ubicacion.latitud,
+        longitud: longitud !== undefined ? longitud : clientes[clienteIndex].ubicacion.longitud,
+        activo: activo !== undefined ? activo : clientes[clienteIndex].ubicacion.activo,
+        atendido: atendido !== undefined ? atendido : clientes[clienteIndex].ubicacion.atendido // Nuevo campo atendido
+      };
+  
+      // Guardar los cambios en el archivo
+      await writeClientesFile(clientes);
+  
+      // Responder con éxito
+      res.status(200).json({
+        message: 'Ubicación actualizada exitosamente',
+        cliente: clientes[clienteIndex]
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Ocurrió un error al actualizar la ubicación del cliente' });
     }
-
-    // Actualizar los valores de la ubicación del cliente
-    clientes[clienteIndex].ubicacion = {
-      latitud: latitud !== undefined ? latitud : clientes[clienteIndex].ubicacion.latitud,
-      longitud: longitud !== undefined ? longitud : clientes[clienteIndex].ubicacion.longitud,
-      activo: activo !== undefined ? activo : clientes[clienteIndex].ubicacion.activo
-    };
-
-    // Guardar los cambios en el archivo
-    await writeClientesFile(clientes);
-
-    // Responder con éxito
-    res.status(200).json({
-      message: 'Ubicación actualizada exitosamente',
-      cliente: clientes[clienteIndex]
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Ocurrió un error al actualizar la ubicación del cliente' });
-  }
-});
+  });
+  
 
   
 module.exports = router;
