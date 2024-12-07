@@ -35,7 +35,7 @@
     "password": "12345",
     "solicitud": {
       "espera": false,
-      "usuario": 0
+      "usuario": 2
     },
     "aceptada": false
   },
@@ -47,17 +47,17 @@
     "email": "ivanReyes@hotmail.com",
     "id": 3,
     "ubicacion": {
-      "latitud": 21.878094,
-      "longitud": -102.271532,
+      "latitud": 21.878093719482422,
+      "longitud": -102.27153015136719,
       "activo": true,
       "atendido": false
     },
     "password": "12345",
     "solicitud": {
-      "espera": false,
-      "usuario": 0
+      "espera": true,
+      "usuario": 1
     },
-    "aceptada": false
+    "aceptada": true
   },
   {
     "nombre": "uzziel",
@@ -78,13 +78,5 @@
       "usuario": 0
     },
     "aceptada": false
-  },
-  {
-    "nombre": "asedfdasdf",
-    "apellido": "asdfasdf",
-    "direccion": "asdfasdf",
-    "telefono": "123123123",
-    "email": "asdfasdf",
-    "id": 5
   }
 ]
