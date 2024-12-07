@@ -121,4 +121,44 @@ router.put('/actualizar-ubicacion/conductores/:id', async (req, res) => {
 });
 
 
+// Actualizar solo la variable 'aceptada' del conductor
+router.put('/actualizar-aceptada/conductores/:id', async (req, res) => {
+  try {
+    const { id } = req.params;  // Obtener el ID del conductor desde los parámetros
+    const { aceptada } = req.body;  // Obtener el nuevo valor de 'aceptada' desde el cuerpo de la solicitud
+
+    // Verificar que el campo 'aceptada' haya sido proporcionado
+    if (aceptada === undefined) {
+      return res.status(400).json({ error: "'aceptada' es un campo obligatorio" });
+    }
+
+    // Leer los conductores desde el archivo
+    const conductores = await readConductoresFile();
+
+    // Buscar el conductor por ID
+    const conductorIndex = conductores.findIndex(conductor => conductor.id === parseInt(id));
+
+    if (conductorIndex === -1) {
+      return res.status(404).json({ error: 'Conductor no encontrado' });
+    }
+
+    // Actualizar solo el valor de 'aceptada'
+    conductores[conductorIndex].aceptada = aceptada;
+
+    // Guardar los cambios en el archivo
+    await writeConductoresFile(conductores);
+
+    // Responder con éxito
+    res.status(200).json({
+      message: 'Campo "aceptada" del conductor actualizado exitosamente',
+      conductor: conductores[conductorIndex]
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al actualizar el campo "aceptada" del conductor' });
+  }
+});
+
+
+
 module.exports = router;
