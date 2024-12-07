@@ -75,4 +75,48 @@ router.get('/ver-conductores', async (req, res) => {
     }
   });
   
+// Actualizar la ubicación del conductor
+router.put('/actualizar-ubicacion/conductores/:id', async (req, res) => {
+  try {
+    const { id } = req.params;  // Obtener el ID del conductor desde los parámetros
+    const { latitud, longitud, activo, atendido, solicitud} = req.body;  // Obtener la nueva ubicación desde el cuerpo de la solicitud
+
+    // Leer los conductores desde el archivo
+    const conductores = await readConductoresFile();
+
+    // Buscar el conductor por ID
+    const conductorIndex = conductores.findIndex(conductor => conductor.id === parseInt(id));
+
+    if (conductorIndex === -1) {
+      return res.status(404).json({ error: 'Conductor no encontrado' });
+    }
+
+    // Actualizar los valores de la ubicación del conductor
+    conductores[conductorIndex].ubicacion = {
+      latitud: latitud !== undefined ? latitud : conductores[conductorIndex].ubicacion.latitud,
+      longitud: longitud !== undefined ? longitud : conductores[conductorIndex].ubicacion.longitud,
+      activo: activo !== undefined ? activo : conductores[conductorIndex].ubicacion.activo,
+      atendido: atendido !== undefined ? atendido : conductores[conductorIndex].ubicacion.atendido
+    };
+
+    // Actualizar el campo 'solicitud' si se proporciona
+    if (solicitud !== undefined) {
+      conductores[conductorIndex].solicitud = solicitud;
+    }
+
+    // Guardar los cambios en el archivo
+    await writeConductoresFile(conductores);
+
+    // Responder con éxito
+    res.status(200).json({
+      message: 'Ubicación del conductor actualizada exitosamente',
+      conductor: conductores[conductorIndex]
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al actualizar la ubicación del conductor' });
+  }
+});
+
+
 module.exports = router;

@@ -72,9 +72,9 @@ router.get('/ver-clientes', async (req, res) => {
       res.status(500).json({ error: 'Ocurrió un error al obtener los clientes' });
     }
   });
-  
 
-  router.put('/actualizar-ubicacion/:id', async (req, res) => {
+
+  router.put('/actualizar-ubicacion/clientes/:id', async (req, res) => {
     try {
       const { id } = req.params; // Obtener el ID desde los parámetros de la ruta
       const { latitud, longitud, activo, atendido } = req.body; // Obtener la nueva ubicación y atendido desde el cuerpo de la solicitud
