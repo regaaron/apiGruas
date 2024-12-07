@@ -7,10 +7,11 @@
     "email": "reyesomar028@gmail.com",
     "password": "123",
     "ubicacion": {
-      "latitud": 21.916697, 
-      "longitud": -102.314467,
-        "activo": true
-      },
+      "latitud": 21.878094,
+      "longitud": -102.271532,
+      "activo": true,
+      "atendido": true
+    },
     "id": 1
   },
   {
@@ -21,11 +22,11 @@
     "email": "Alan225Gamer@gmail.com",
     "password": "1234",
     "ubicacion": {
-      "latitud": 21.916697, 
+      "latitud": 21.916697,
       "longitud": -102.314467,
-        "activo": true,
-        "atendido": false
-      },
+      "activo": true,
+      "atendido": false
+    },
     "id": 2
   },
   {
@@ -36,11 +37,11 @@
     "nombre": "Omar",
     "password": "12345",
     "ubicacion": {
-      "latitud": 21.916697, 
+      "latitud": 21.916697,
       "longitud": -102.314467,
-        "activo": true,
-        "atendido": false
-      },
+      "activo": true,
+      "atendido": false
+    },
     "telefono": "748572757271"
   },
   {
@@ -51,11 +52,11 @@
     "nombre": "aaron",
     "password": "4321",
     "ubicacion": {
-      "latitud": 21.916697, 
+      "latitud": 21.916697,
       "longitud": -102.314467,
-        "activo": true,
-        "atendido": false
-      },
+      "activo": true,
+      "atendido": false
+    },
     "telefono": "4827264"
   }
 ]
