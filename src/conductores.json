@@ -13,7 +13,11 @@
         "atendido": false
       },
     "password": "12345",
-    "solicitud": false
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   },
   {
     "nombre": "omar",
@@ -29,7 +33,11 @@
       "atendido": false
     },
     "password": "12345",
-    "solicitud": false
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   },
   {
     "nombre": "ivan",
@@ -45,7 +53,11 @@
       "atendido": false
     },
     "password": "12345",
-    "solicitud": false
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   },
   {
     "nombre": "uzziel",
@@ -61,6 +73,10 @@
         "atendido": false
       },
     "password": "12345",
-    "solicitud": false
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   }
 ]

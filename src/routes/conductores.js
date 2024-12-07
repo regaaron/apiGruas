@@ -79,7 +79,7 @@ router.get('/ver-conductores', async (req, res) => {
 router.put('/actualizar-ubicacion/conductores/:id', async (req, res) => {
   try {
     const { id } = req.params;  // Obtener el ID del conductor desde los parámetros
-    const { latitud, longitud, activo, atendido, solicitud} = req.body;  // Obtener la nueva ubicación desde el cuerpo de la solicitud
+    const { latitud, longitud, activo, atendido, espera, usuario} = req.body;  // Obtener la nueva ubicación desde el cuerpo de la solicitud
 
     // Leer los conductores desde el archivo
     const conductores = await readConductoresFile();
@@ -99,10 +99,12 @@ router.put('/actualizar-ubicacion/conductores/:id', async (req, res) => {
       atendido: atendido !== undefined ? atendido : conductores[conductorIndex].ubicacion.atendido
     };
 
-    // Actualizar el campo 'solicitud' si se proporciona
-    if (solicitud !== undefined) {
-      conductores[conductorIndex].solicitud = solicitud;
+
+    conductores[conductorIndex].solicitud = {
+      espera: espera !== undefined ? espera: conductores[conductorIndex].solicitud.espera,
+      usuario: usuario !== undefined ? usuario: conductores[conductorIndex].solicitud.usuario
     }
+    
 
     // Guardar los cambios en el archivo
     await writeConductoresFile(conductores);
