@@ -7,8 +7,8 @@
     "email": "reyesomar028@gmail.com",
     "password": "123",
     "ubicacion": {
-      "latitud": 21.878094,
-      "longitud": -102.271532,
+      "latitud": 21.898094177246094,
+      "longitud": -102.3221206665039,
       "activo": true,
       "atendido": true
     },
