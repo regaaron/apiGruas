@@ -7,10 +7,11 @@
     "email": "reyesomar028@gmail.com",
     "password": "123",
     "ubicacion": {
-      "latitud": 21.898094177246094,
-      "longitud": -102.3221206665039,
+      "latitud": 21.84393310546875,
+      "longitud": -102.30696105957031,
       "activo": true,
-      "atendido": true
+      "atendido": false,
+      "conductor": 0
     },
     "id": 1
   },
@@ -25,7 +26,8 @@
       "latitud": 21.916697,
       "longitud": -102.314467,
       "activo": true,
-      "atendido": false
+      "atendido": true,
+      "conductor": 1
     },
     "id": 2
   },
@@ -39,8 +41,9 @@
     "ubicacion": {
       "latitud": 21.916697,
       "longitud": -102.314467,
-      "activo": true,
-      "atendido": false
+      "activo": false,
+      "atendido": false,
+      "conductor": 0
     },
     "telefono": "748572757271"
   },
@@ -54,8 +57,9 @@
     "ubicacion": {
       "latitud": 21.916697,
       "longitud": -102.314467,
-      "activo": true,
-      "atendido": false
+      "activo": false,
+      "atendido": false,
+      "conductor": 0
     },
     "telefono": "4827264"
   }

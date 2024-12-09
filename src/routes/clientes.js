@@ -77,7 +77,7 @@ router.get('/ver-clientes', async (req, res) => {
   router.put('/actualizar-ubicacion/clientes/:id', async (req, res) => {
     try {
       const { id } = req.params; // Obtener el ID desde los parámetros de la ruta
-      const { latitud, longitud, activo, atendido } = req.body; // Obtener la nueva ubicación y atendido desde el cuerpo de la solicitud
+      const { latitud, longitud, activo, atendido, conductor } = req.body; // Obtener la nueva ubicación y atendido desde el cuerpo de la solicitud
   
       // Leer los clientes desde el archivo
       const clientes = await readClientesFile();
@@ -94,7 +94,8 @@ router.get('/ver-clientes', async (req, res) => {
         latitud: latitud !== undefined ? latitud : clientes[clienteIndex].ubicacion.latitud,
         longitud: longitud !== undefined ? longitud : clientes[clienteIndex].ubicacion.longitud,
         activo: activo !== undefined ? activo : clientes[clienteIndex].ubicacion.activo,
-        atendido: atendido !== undefined ? atendido : clientes[clienteIndex].ubicacion.atendido // Nuevo campo atendido
+        atendido: atendido !== undefined ? atendido : clientes[clienteIndex].ubicacion.atendido, // Nuevo campo atendido
+        conductor: conductor !== undefined ? conductor: clientes[clienteIndex].ubicacion.conductor
       };
   
       // Guardar los cambios en el archivo
