@@ -78,5 +78,25 @@
       "usuario": 0
     },
     "aceptada": false
+  },
+  {
+    "nombre": "a",
+    "apellido": "l",
+    "direccion": "d",
+    "telefono": "1",
+    "email": "s",
+    "password": "aaronlopez",
+    "id": 5,
+    "ubicacion": {
+      "latitud": null,
+      "longitud": null,
+      "activo": false,
+      "atendido": false
+    },
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   }
 ]

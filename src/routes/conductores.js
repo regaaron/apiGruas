@@ -44,8 +44,20 @@ router.post('/Registrar-Conductor', async (req, res) => {
       ? conductores[conductores.length - 1].id + 1
       : 1;
 
-    // Asignar el nuevo ID al conductor
+    // Asignar valores predeterminados
     nuevoConductor.id = nuevoId;
+    nuevoConductor.ubicacion = {
+      latitud: null,
+      longitud: null,
+      activo: false,
+      atendido: false
+    };
+    nuevoConductor.password = nuevoConductor.password || null;
+    nuevoConductor.solicitud = {
+      espera: false,
+      usuario: 0
+    };
+    nuevoConductor.aceptada = false;
 
     // Agregar el nuevo conductor al array
     conductores.push(nuevoConductor);
@@ -63,6 +75,7 @@ router.post('/Registrar-Conductor', async (req, res) => {
     res.status(500).json({ error: 'Ocurrió un error al registrar el conductor' });
   }
 });
+
 
 // Ruta GET para obtener todos los conductores
 router.get('/ver-conductores', async (req, res) => {

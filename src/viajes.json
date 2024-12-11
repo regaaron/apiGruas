@@ -1,0 +1,96 @@
+[
+    {
+      "id": 1,
+      "conductor": {
+        "id": 5,
+        "nombre": "Raul",
+        "apellido": "Matamoros",
+        "telefono": "1232441"
+      },
+      "usuario": {
+        "id": 1,
+        "nombre": "usuario1",
+        "apellido": "apellido1 apellido2",
+        "telefono": "4495474429",
+        "email": "reyesomar028@gmail.com"
+      },
+      "viaje": {
+        "origen": {
+          "direccion": "calle mar del norte 209",
+          "latitud": 21.898094177246094,
+          "longitud": -102.3221206665039
+        },
+        "destino": {
+          "direccion": "calle industrial 123",
+          "latitud": 21.897385,
+          "longitud": -102.279426
+        },
+        "fecha": "2024-12-10T14:30:00Z",
+        "distancia": "4.5 km",
+        "duracion": "12 min"
+      }
+    },
+    {
+      "id": 2,
+      "conductor": {
+        "id": 4,
+        "nombre": "aaron",
+        "apellido": "lopez ramirez",
+        "telefono": "4827264"
+      },
+      "usuario": {
+        "id": 2,
+        "nombre": "usuario2",
+        "apellido": "apellido1_2 apellido2_2",
+        "telefono": "4491996676",
+        "email": "Alan225Gamer@gmail.com"
+      },
+      "viaje": {
+        "origen": {
+          "direccion": "calle mar del norte 209",
+          "latitud": 21.916697,
+          "longitud": -102.314467
+        },
+        "destino": {
+          "direccion": "calle industrial 123",
+          "latitud": 21.897385,
+          "longitud": -102.279426
+        },
+        "fecha": "2024-12-11T09:00:00Z",
+        "distancia": "3.8 km",
+        "duracion": "10 min"
+      }
+    },
+    {
+      "id": 3,
+      "conductor": {
+        "id": 3,
+        "nombre": "Omar",
+        "apellido": "reyes ramirez",
+        "telefono": "748572757271"
+      },
+      "usuario": {
+        "id": 3,
+        "nombre": "usuario3",
+        "apellido": "reyes ramirez",
+        "telefono": "748572757271",
+        "email": "reyesomar0281@gmail.com"
+      },
+      "viaje": {
+        "origen": {
+          "direccion": "gabilondo soler 120",
+          "latitud": 21.916697,
+          "longitud": -102.314467
+        },
+        "destino": {
+          "direccion": "calle industrial 123",
+          "latitud": 21.923126,
+          "longitud": -102.296221
+        },
+        "fecha": "2024-12-11T10:00:00Z",
+        "distancia": "5.2 km",
+        "duracion": "15 min"
+      }
+    }
+  ]
+  
