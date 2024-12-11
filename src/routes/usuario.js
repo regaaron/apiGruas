@@ -17,30 +17,26 @@ const readUsuariosFile = () => {
   });
 };
 
-// Endpoint de login
-router.post('/login', async (req, res) => {
-  try {
-    const { username } = req.body; // Obtenemos el username del body
+// Endpoint de login// Endpoint de login
+router.post('/login', (req, res) => {
+  const { username, password } = req.body;
 
-    // Leer los usuarios desde el archivo
-    const usuarios = await readUsuariosFile();
-
-    // Buscar el usuario por su username
-    const usuario = usuarios.find(u => u.username === username);
-
-    if (!usuario) {
-      return res.status(404).json({ error: 'Usuario no encontrado' });
+  // Leer los usuarios desde el archivo
+  fs.readFile(FILE_PATH, 'utf-8', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error al leer el archivo de usuarios' });
     }
 
-    // Enviar respuesta exitosa
-    res.status(200).json({
-      message: 'Inicio de sesión exitoso',
-      usuario: { id: usuario.id, username: usuario.username }
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Ocurrió un error durante el inicio de sesión' });
-  }
+    const usuarios = JSON.parse(data);
+
+    // Validar las credenciales
+    const usuario = usuarios.find(user => user.username === username && user.password === password);
+    if (usuario) {
+      return res.status(200).json({ message: 'Inicio de sesión exitoso', usuario });
+    } else {
+      return res.status(401).json({ error: 'Credenciales incorrectas' });
+    }
+  });
 });
 
 module.exports = router;
