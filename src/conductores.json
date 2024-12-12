@@ -1,6 +1,6 @@
 [
   {
-    "nombre": "aaron",
+    "nombre": "aaron123",
     "apellido": "lopez",
     "direccion": "calle mar del norte 209",
     "telefono": "4493877833",
@@ -80,12 +80,12 @@
     "aceptada": false
   },
   {
-    "nombre": "a",
-    "apellido": "l",
-    "direccion": "d",
-    "telefono": "1",
-    "email": "s",
-    "password": "aaronlopez",
+    "nombre": "aaron",
+    "apellido": "lopez",
+    "direccion": "calle 10",
+    "telefono": "44938123",
+    "email": "aaron_lopez222@hotmail.com",
+    "password": "aaron",
     "id": 5,
     "ubicacion": {
       "latitud": null,

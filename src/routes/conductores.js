@@ -173,5 +173,37 @@ router.put('/actualizar-aceptada/conductores/:id', async (req, res) => {
 });
 
 
+// Actualizar conductor por ID
+router.put('/actualizar-conductor/:id', async (req, res) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const datosActualizados = req.body;
+
+    // Leer los conductores desde el archivo
+    const conductores = await readConductoresFile();
+
+    // Encontrar el índice del conductor a actualizar
+    const index = conductores.findIndex((c) => c.id === id);
+
+    if (index === -1) {
+      return res.status(404).json({ error: 'Conductor no encontrado' });
+    }
+
+    // Actualizar los datos del conductor
+    conductores[index] = { ...conductores[index], ...datosActualizados };
+
+    // Escribir los datos actualizados en el archivo
+    await writeConductoresFile(conductores);
+
+    res.status(200).json({
+      message: 'Conductor actualizado exitosamente',
+      conductor: conductores[index],
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al actualizar el conductor' });
+  }
+});
+
 
 module.exports = router;

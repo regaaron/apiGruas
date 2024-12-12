@@ -72,4 +72,37 @@ router.get('/ver-gruas',async(req,res)=>{
         res.status(500).json({error: 'Ocurrio un error al obtener la lista de gruas'});
     }
 });
+
+// Ruta PUT para editar una grúa
+router.put('/editar-grua/:id', async (req, res) => {
+  try {
+    const gruaId = parseInt(req.params.id);
+    const actualizacion = req.body;
+
+    // Leer las grúas desde el archivo
+    const gruas = await readGruas();
+
+    // Buscar la grúa a editar
+    const index = gruas.findIndex(grua => grua.id === gruaId);
+    if (index === -1) {
+      return res.status(404).json({ error: 'Grúa no encontrada' });
+    }
+
+    // Actualizar la grúa
+    gruas[index] = { ...gruas[index], ...actualizacion };
+
+    // Escribir los datos actualizados en el archivo
+    await writeGruas(gruas);
+
+    // Enviar una respuesta exitosa
+    res.json({
+      message: 'Grúa actualizada exitosamente',
+      grua: gruas[index]
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al actualizar la grúa' });
+  }
+});
+
 module.exports = router;
