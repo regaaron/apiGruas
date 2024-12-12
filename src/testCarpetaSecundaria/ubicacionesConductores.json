@@ -1,0 +1,73 @@
+[
+    {
+      "nombre": "Carlos Pérez",
+      "ubicacion": {
+        "latitud": 21.880105,
+        "longitud": -102.310422
+      }
+    },
+    {
+      "nombre": "Laura Gómez",
+      "ubicacion": {
+        "latitud": 21.883145, 
+        "longitud": -102.296750
+      }
+    },
+    {
+      "nombre": "Roberto Ramírez",
+      "ubicacion": {
+        "latitud": 21.878094, 
+        "longitud": -102.271524
+      }
+    },
+    {
+      "nombre": "María Hernández",
+      "ubicacion": {
+        "latitud": 21.878355, 
+        "longitud": -102.281364
+      }
+    },
+    {
+      "nombre": "Jorge Martínez",
+      "ubicacion": {
+        "latitud": 21.897385, 
+        "longitud": -102.279426
+      }
+    },
+    {
+      "nombre": "Ana López",
+      "ubicacion": {
+        "latitud": 21.920452,
+        "longitud": -102.299874
+      }
+    },
+    {
+      "nombre": "Luis Sánchez",
+      "ubicacion": {
+        "latitud": 21.923126,
+        "longitud": -102.296221
+      }
+    },
+    {
+      "nombre": "Sofía Díaz",
+      "ubicacion": {
+        "latitud": 21.916697, 
+        "longitud": -102.314467
+      }
+    },
+    {
+      "nombre": "Fernando Torres",
+      "ubicacion": {
+        "latitud": 21.876778, 
+        "longitud": -102.271573
+      }
+    },
+    {
+      "nombre": "Gabriela Castro",
+      "ubicacion": {
+        "latitud": 21.867348, 
+        "longitud": -102.279887
+      }
+    }
+  ]
+  
