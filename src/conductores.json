@@ -54,7 +54,7 @@
     },
     "password": "12345",
     "solicitud": {
-      "espera": false,
+      "espera": true,
       "usuario": 1
     },
     "aceptada": true

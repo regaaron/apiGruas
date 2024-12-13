@@ -42,10 +42,10 @@ router.post('/Registrar-Cliente', async (req, res) => {
       ? clientes[clientes.length - 1].id + 1
       : 1;
 
-    // Asignar el nuevo ID al conductor
+    // Asignar el nuevo ID al clientes
     nuevocliente.id = nuevoId;
 
-    // Agregar el nuevo conductor al array
+    // Agregar el nuevo clientes al array
     clientes.push(nuevocliente);
 
     // Escribir los datos actualizados en el archivo
@@ -111,6 +111,47 @@ router.get('/ver-clientes', async (req, res) => {
       res.status(500).json({ error: 'Ocurrió un error al actualizar la ubicación del cliente' });
     }
   });
+
+  // Actualizar solo la variable 'activo' del clientes
+router.put('/actualizar-activo/clientes/:id', async (req, res) => {
+  try {
+    const { id } = req.params;  // Obtener el ID del clientes desde los parámetros
+    const { activo } = req.body;  // Obtener el nuevo valor de 'activo' desde el cuerpo de la solicitud
+
+    // Verificar que el campo 'activo' haya sido proporcionado
+    if (activo === undefined) {
+      return res.status(400).json({ error: "'activo' es un campo obligatorio" });
+    }
+
+    // Convertir a booleano si es necesario
+    const activoBoolean = (activo === true || activo === "true");
+
+    // Leer los clientes desde el archivo
+    const clientes = await readClientesFile();
+
+    // Buscar el clientes por ID
+    const clientesIndex = clientes.findIndex(clientes => clientes.id === parseInt(id));
+
+    if (clientesIndex === -1) {
+      return res.status(404).json({ error: 'cliente no encontrado' });
+    }
+
+    // Actualizar solo el valor de 'activo'
+    clientes[clientesIndex].ubicacion.activo = activoBoolean;
+
+    // Guardar los cambios en el archivo
+    await writeClientesFile(clientes);
+
+    // Responder con éxito
+    res.status(200).json({
+      message: 'Campo "aceptada" del clientes actualizado exitosamente',
+      clientes: clientes[clientesIndex]
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al actualizar el campo "aceptada" del clientes' });
+  }
+});
   
 
   

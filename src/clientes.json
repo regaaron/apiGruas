@@ -7,8 +7,8 @@
     "email": "reyesomar028@gmail.com",
     "password": "123",
     "ubicacion": {
-      "latitud": 21.843929290771484,
-      "longitud": -102.30694580078125,
+      "latitud": 21.84392547607422,
+      "longitud": -102.30692291259766,
       "activo": true,
       "atendido": true,
       "conductor": 3
@@ -39,8 +39,8 @@
     "nombre": "Omar",
     "password": "12345",
     "ubicacion": {
-      "latitud": 21.9264397,
-      "longitud": -102.314467,
+      "latitud": 21.916696548461914,
+      "longitud": -102.3221435546875,
       "activo": false,
       "atendido": false,
       "conductor": 0
