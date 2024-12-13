@@ -94,7 +94,7 @@ router.get('/ver-clientes', async (req, res) => {
         latitud: latitud !== undefined ? latitud : clientes[clienteIndex].ubicacion.latitud,
         longitud: longitud !== undefined ? longitud : clientes[clienteIndex].ubicacion.longitud,
         activo: activo !== undefined ? activo : clientes[clienteIndex].ubicacion.activo,
-        atendido: atendido !== undefined ? atendido : clientes[clienteIndex].ubicacion.atendido, // Nuevo campo atendido
+        atendido: atendido !== undefined ? atendido : clientes[clienteIndex].ubicacion.atendido,
         conductor: conductor !== undefined ? conductor: clientes[clienteIndex].ubicacion.conductor
       };
   
