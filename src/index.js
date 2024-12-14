@@ -16,7 +16,7 @@ const ubicacionesConductoresRoutes = require('./routes/ubicacionesConductores');
 const login = require('./routes/usuario');
 const viajes = require('./routes/viajes');
 const test = require('./routes/prueba1');
-const test2 = require('./routes/prueba3');
+const test2 = require('./routes/ED');
 
 // Usa las rutas de conductores
 app.use('/', conductoresRoutes);  

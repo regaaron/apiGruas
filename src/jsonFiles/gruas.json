@@ -1,0 +1,23 @@
+[
+  {
+    "modelo": "123",
+    "numeroDeSerie": "123",
+    "placa": "123",
+    "tipoDeGrua": "123",
+    "id": 1
+  },
+  {
+    "modelo": "modelo2",
+    "numeroDeSerie": "serie2",
+    "placa": "placa2",
+    "tipoDeGrua": "tipo2",
+    "id": 2
+  },
+  {
+    "modelo": "mo",
+    "numeroDeSerie": "ser",
+    "placa": "pla",
+    "tipoDeGrua": "ti",
+    "id": 3
+  }
+]

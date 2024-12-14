@@ -1,0 +1,102 @@
+[
+  {
+    "nombre": "aaron123",
+    "apellido": "lopez",
+    "direccion": "calle mar del norte 209",
+    "telefono": "4493877833",
+    "email": "aaron_lopez222@hotmail.com",
+    "id": 1,
+    "ubicacion": {
+      "latitud": 21.916697,
+      "longitud": -102.314467,
+      "activo": true,
+      "atendido": false
+    },
+    "password": "12345",
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
+  },
+  {
+    "nombre": "omar",
+    "apellido": "reyes",
+    "direccion": "calle 10",
+    "telefono": "4493877821",
+    "email": "omarReyes@hotmail.com",
+    "id": 2,
+    "ubicacion": {
+      "latitud": 21.916697,
+      "longitud": -102.314467,
+      "activo": false,
+      "atendido": false
+    },
+    "password": "12345",
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
+  },
+  {
+    "nombre": "ivan",
+    "apellido": "reyes",
+    "direccion": "calle 123",
+    "telefono": "4493877821",
+    "email": "ivanReyes@hotmail.com",
+    "id": 3,
+    "ubicacion": {
+      "latitud": 21.916696548461914,
+      "longitud": -102.3221435546875,
+      "activo": true,
+      "atendido": false
+    },
+    "password": "12345",
+    "solicitud": {
+      "espera": true,
+      "usuario": 1
+    },
+    "aceptada": true
+  },
+  {
+    "nombre": "uzziel",
+    "apellido": "nava",
+    "direccion": "calle 123",
+    "telefono": "123",
+    "email": "aaron_lopez222@hotmail.com",
+    "id": 4,
+    "ubicacion": {
+      "latitud": 21.920452,
+      "longitud": -102.299874,
+      "activo": false,
+      "atendido": false
+    },
+    "password": "12345",
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
+  },
+  {
+    "nombre": "aaron",
+    "apellido": "lopez",
+    "direccion": "calle 10",
+    "telefono": "44938123",
+    "email": "aaron_lopez222@hotmail.com",
+    "password": "aaron",
+    "id": 5,
+    "ubicacion": {
+      "latitud": null,
+      "longitud": null,
+      "activo": false,
+      "atendido": false
+    },
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
+  }
+]
