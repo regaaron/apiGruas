@@ -10,7 +10,8 @@
         "latitud": 21.898094177246094,
         "longitud": -102.3221206665039,
         "activo": true,
-        "atendido": true
+        "atendido": true,
+        "conductor":0
       },
       "id": 1
     },
@@ -25,7 +26,8 @@
         "latitud": 21.916697,
         "longitud": -102.314467,
         "activo": true,
-        "atendido": false
+        "atendido": false,
+        "conductor":0
       },
       "id": 2
     },
@@ -40,7 +42,8 @@
         "latitud": 21.916697,
         "longitud": -102.314467,
         "activo": true,
-        "atendido": false
+        "atendido": false,
+        "conductor":0
       },
       "telefono": "748572757271"
     },
@@ -55,7 +58,8 @@
         "latitud": 21.916697,
         "longitud": -102.314467,
         "activo": true,
-        "atendido": false
+        "atendido": false,
+        "conductor":0
       },
       "telefono": "4827264"
     }
