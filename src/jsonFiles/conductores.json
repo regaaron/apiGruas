@@ -54,10 +54,10 @@
     },
     "password": "12345",
     "solicitud": {
-      "espera": true,
-      "usuario": 1
+      "espera": false,
+      "usuario": 0
     },
-    "aceptada": true
+    "aceptada": false
   },
   {
     "nombre": "uzziel",

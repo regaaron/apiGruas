@@ -7,8 +7,8 @@ const router = express.Router();
 
 // Ruta para encriptar `clientes.json`
 router.post('/encrypt', async (req, res) => {
-  const inputFileName = 'viajes.json';
-  const outputFileName = 'viajes.encrypted';
+  const inputFileName = 'conductores.json';
+  const outputFileName = 'conductores.encrypted';
 
   try {
     const message = await encryptFile(`../jsonFiles/${inputFileName}`, `../encripFiles/${outputFileName}`);
@@ -20,8 +20,8 @@ router.post('/encrypt', async (req, res) => {
 
 // Ruta para desencriptar `clientes.encrypted`
 router.post('/decrypt', async (req, res) => {
-  const inputFileName = 'clientes.encrypted';
-  const outputFileName = 'clientesDec.json';
+  const inputFileName = 'conductores.encrypted';
+  const outputFileName = 'conductores.json';
 
   try {
     const message = await decryptFile(`../encripFiles/${inputFileName}`, `../encripFiles/${outputFileName}`);
