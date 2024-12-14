@@ -14,6 +14,7 @@ const gruasRoutes = require('./routes/gruas');
 const clientesRoutes = require('./routes/clientes');
 const ubicacionesConductoresRoutes = require('./routes/ubicacionesConductores');
 const login = require('./routes/usuario');
+const viajes = require('./routes/viajes');
 
 // Usa las rutas de conductores
 app.use('/', conductoresRoutes);  
@@ -21,6 +22,7 @@ app.use('/', gruasRoutes);
 app.use('/', clientesRoutes);
 app.use('/', ubicacionesConductoresRoutes);
 app.use('/', login);
+app.use('/', viajes);
 
 // Inicia el servidor en el puerto 3000
 const PORT = 3000;
