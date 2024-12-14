@@ -29,33 +29,38 @@ const writeViajesFile = (viajes) => {
   });
 };
 
-// Funcion para actualizar el archivo de viajes
-router.put('/Actualizar-Viajes/:id', async (req, res) => {
+// Función para actualizar el archivo de viajes
+router.put('/Actualizar-Viajes', async (req, res) => {
   try {
-    const { id } = req.params;
-    const { id_conductor, latitud_conductor, longitud_conductor } = req.body;
+    const { id_conductor, latitud_conductor, longitud_conductor, id_cliente } = req.body;
 
+    // Leer el archivo de viajes
     const viajes = await readViajesFile();
 
-    const viajeIndex = viajes.findIndex(viaje => viaje.id_viaje === parseInt(id));
+    // Buscar el viaje donde el id_conductor es 0 y el id_cliente coincide
+    const viajeIndex = viajes.findIndex(viaje => 
+      viaje.id_conductor === 0 && viaje.id_cliente === parseInt(id_cliente)
+    );
 
     if (viajeIndex === -1) {
-      return res.status(404).json({ error: 'viaje no encontrado' });
+      return res.status(404).json({ error: 'Viaje no encontrado' });
     }
 
-    //Actualizar los valores del viaje 
+    // Actualizar los valores del viaje
     viajes[viajeIndex].id_conductor = id_conductor;
     viajes[viajeIndex].latitud_conductor = latitud_conductor;
     viajes[viajeIndex].longitud_conductor = longitud_conductor;
 
+    // Escribir los cambios en el archivo de viajes
     await writeViajesFile(viajes);
 
-    res.status(200).json({ message: 'viaje actualizado exitosamente' });
+    res.status(200).json({ message: 'Viaje actualizado exitosamente' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Ocurrió un error al actualizar el viajes' });
+    res.status(500).json({ error: 'Ocurrió un error al actualizar el viaje' });
   }
 });
+
 
 // Ruta POST para registrar un viajes
 router.post('/Registrar-Viajes', async (req, res) => {
