@@ -2,19 +2,46 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
+const encryptionService = require('../encripFiles/encrypService'); // Ajusta según tu estructura de carpetas
 
-const FILE_PATH = path.join(__dirname, '../usuario.json');
+const ENCRYPTED_FILE_PATH = path.join(__dirname, '../encripFiles/usuario.encrypted');
+const TEMP_DECRYPTED_FILE_PATH = path.join(__dirname, '../encripFiles/usuario.json'); // Archivo temporal desencriptado
 
-// Función para leer el archivo de usuarios
-const readUsuariosFile = () => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(FILE_PATH, 'utf-8', (err, data) => {
-      if (err) {
-        return reject('Error al leer el archivo de usuarios');
-      }
-      resolve(data ? JSON.parse(data) : []);
-    });
-  });
+// Función para leer el archivo de usuarios desencriptándolo
+const readUsuariosFile = async () => {
+  try {
+    // Desencriptar el archivo
+    await encryptionService.decryptFile(ENCRYPTED_FILE_PATH, TEMP_DECRYPTED_FILE_PATH);
+
+    // Leer el archivo desencriptado
+    const data = fs.readFileSync(TEMP_DECRYPTED_FILE_PATH, 'utf-8');
+    const usuarios = data ? JSON.parse(data) : [];
+
+    // Eliminar el archivo temporal desencriptado
+    fs.unlinkSync(TEMP_DECRYPTED_FILE_PATH);
+
+    return usuarios;
+  } catch (error) {
+    console.error('Error al desencriptar o leer el archivo:', error);
+    throw new Error('Error al procesar los datos de usuarios');
+  }
+};
+
+// Función para escribir en el archivo de usuarios encriptado
+const writeUsuariosFile = async (usuarios) => {
+  try {
+    // Crear el archivo temporal desencriptado
+    fs.writeFileSync(TEMP_DECRYPTED_FILE_PATH, JSON.stringify(usuarios, null, 2), 'utf-8');
+
+    // Encriptar el archivo temporal y guardar en la ubicación encriptada
+    await encryptionService.encryptFile(TEMP_DECRYPTED_FILE_PATH, ENCRYPTED_FILE_PATH);
+
+    // Eliminar el archivo temporal desencriptado
+    fs.unlinkSync(TEMP_DECRYPTED_FILE_PATH);
+  } catch (error) {
+    console.error('Error al escribir los datos de usuarios:', error);
+    throw new Error('Error al guardar los datos de usuarios');
+  }
 };
 
 // Endpoint de login
