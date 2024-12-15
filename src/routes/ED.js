@@ -7,8 +7,8 @@ const router = express.Router();
 
 // Ruta para encriptar `clientes.json`
 router.post('/encrypt', async (req, res) => {
-  const inputFileName = 'clientes.json';
-  const outputFileName = 'clientes.encrypted';
+  const inputFileName = 'conductores.json';
+  const outputFileName = 'condcutores.encrypted';
 
   try {
     const message = await encryptFile(`../jsonFiles/${inputFileName}`, `../encripFiles/${outputFileName}`);
