@@ -4,7 +4,8 @@ const cors = require('cors');
 const path = require('path');
 
 // Configura CORS para permitir solicitudes desde cualquier origen
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: '*', // Permitir cualquier origen
+    methods: ['GET', 'POST', 'PUT', 'DELETE']})); // Métodos permitidos}));
 
 
 app.use(express.json());
