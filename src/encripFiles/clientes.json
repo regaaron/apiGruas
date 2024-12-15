@@ -1,0 +1,65 @@
+[
+    {
+      "nombre": "usuario1",
+      "apellido": "apellido1 apellido2",
+      "direccion": "calle mar del norte 209",
+      "telefono": "4495474429",
+      "email": "reyesomar028@gmail.com",
+      "password": "123",
+      "ubicacion": {
+        "latitud": 21.898094177246094,
+        "longitud": -102.3221206665039,
+        "activo": true,
+        "atendido": false,
+        "conductor":0
+      },
+      "id": 1
+    },
+    {
+      "nombre": "usuario2",
+      "apellido": "apellido1_2 apellido2_2",
+      "direccion": "calle mar del norte 209",
+      "telefono": "4491996676",
+      "email": "Alan225Gamer@gmail.com",
+      "password": "1234",
+      "ubicacion": {
+        "latitud": 21.916697,
+        "longitud": -102.314467,
+        "activo": true,
+        "atendido": false,
+        "conductor":0
+      },
+      "id": 2
+    },
+    {
+      "apellido": "reyes ramirez",
+      "direccion": "gabilondo soler 120 ",
+      "email": "reyesomar0281@gmail.com",
+      "id": 3,
+      "nombre": "Omar",
+      "password": "12345",
+      "ubicacion": {
+        "latitud": 21.916697,
+        "longitud": -102.314467,
+        "activo": true,
+        "atendido": false,
+        "conductor":0
+      },
+      "telefono": "748572757271"
+    },
+    {
+      "apellido": "lopez ramirez",
+      "direccion": "jfj que me lo dijera ",
+      "email": "aaron@gmail.com",
+      "id": 4,
+      "nombre": "aaron",
+      "password": "4321",
+      "ubicacion": {
+        "latitud": 21.916697,
+        "longitud": -102.314467,
+        "activo": true,
+        "atendido": false,
+        "conductor":0
+      },
+      "telefono": "4827264"
+    
