@@ -10,7 +10,7 @@
         "latitud": 21.898094177246094,
         "longitud": -102.3221206665039,
         "activo": true,
-        "atendido": true,
+        "atendido": false,
         "conductor":0
       },
       "id": 1

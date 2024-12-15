@@ -29,7 +29,7 @@
     "ubicacion": {
       "latitud": 21.916697,
       "longitud": -102.314467,
-      "activo": false,
+      "activo": true,
       "atendido": false
     },
     "password": "12345",
@@ -69,7 +69,7 @@
     "ubicacion": {
       "latitud": 21.920452,
       "longitud": -102.299874,
-      "activo": false,
+      "activo": true,
       "atendido": false
     },
     "password": "12345",
@@ -90,7 +90,7 @@
     "ubicacion": {
       "latitud": null,
       "longitud": null,
-      "activo": false,
+      "activo": true,
       "atendido": false
     },
     "solicitud": {
