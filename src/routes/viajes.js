@@ -2,102 +2,43 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const encryptionService = require('../encripFiles/encrypService'); // Ajusta según tu estructura de carpetas
 
-const ENCRYPTED_FILE_PATH = path.join(__dirname, '../encripFiles/viajes.encrypted');
-const TEMP_DECRYPTED_FILE_PATH = path.join(__dirname, '../encripFiles/viajes.json'); // Archivo temporal desencriptado
+const FILE_PATH = path.join(__dirname, '../viajes.json');
 
-// Función para leer el archivo de viajes desencriptándolo
-const readViajesFile = async () => {
-  try {
-    // Desencriptar el archivo
-    await encryptionService.decryptFile(ENCRYPTED_FILE_PATH, TEMP_DECRYPTED_FILE_PATH);
-
-    // Leer el archivo desencriptado
-    const data = fs.readFileSync(TEMP_DECRYPTED_FILE_PATH, 'utf-8');
-    const viajes = data ? JSON.parse(data) : [];
-
-    // Eliminar el archivo temporal desencriptado
-    fs.unlinkSync(TEMP_DECRYPTED_FILE_PATH);
-
-    return viajes;
-  } catch (error) {
-    console.error('Error al desencriptar o leer el archivo:', error);
-    throw new Error('Error al procesar los datos de viajes');
-  }
-};
-
-// Función para escribir en el archivo de viajes encriptado
-const writeViajesFile = async (viajes) => {
-  try {
-    // Crear el archivo temporal desencriptado
-    fs.writeFileSync(TEMP_DECRYPTED_FILE_PATH, JSON.stringify(viajes, null, 2), 'utf-8');
-
-    // Encriptar el archivo temporal y guardar en la ubicación encriptada
-    await encryptionService.encryptFile(TEMP_DECRYPTED_FILE_PATH, ENCRYPTED_FILE_PATH);
-
-    // Eliminar el archivo temporal desencriptado
-    fs.unlinkSync(TEMP_DECRYPTED_FILE_PATH);
-  } catch (error) {
-    console.error('Error al escribir los datos de viajes:', error);
-    throw new Error('Error al guardar los datos de viajes');
-  }
-};
-
-// Ruta POST para registrar un viaje
-router.post('/Registrar-Viajes', async (req, res) => {
-  try {
-    const nuevoViaje = req.body;
-
-    // Leer los viajes desde el archivo
-    const viajes = await readViajesFile();
-
-    // Generar un nuevo ID para el viaje
-    const nuevoId = viajes.length > 0 
-      ? viajes[viajes.length - 1].id_viaje + 1
-      : 1;
-
-    // Asignar el nuevo ID al viaje
-    nuevoViaje.id_viaje = nuevoId;
-
-    // Agregar el nuevo viaje al array
-    viajes.push(nuevoViaje);
-
-    // Escribir los datos actualizados en el archivo
-    await writeViajesFile(viajes);
-
-    // Enviar una respuesta exitosa
-    res.status(201).json({
-      message: 'Viaje registrado exitosamente',
-      viaje: nuevoViaje,
+// Función para leer el archivo de viajes
+const readViajesFile = () => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(FILE_PATH, 'utf-8', (err, data) => {
+      if (err) {
+        return reject('Error al leer el archivo de viajes');
+      }
+      resolve(data ? JSON.parse(data) : []);
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Ocurrió un error al registrar el viaje' });
-  }
-});
+  });
+};
 
-// Ruta GET para obtener todos los viajes
-router.get('/ver-viajes', async (req, res) => {
-  try {
-    const viajes = await readViajesFile();
-    res.status(200).json(viajes); // Responde con la lista de viajes
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Ocurrió un error al obtener los viajes' });
-  }
-});
+// Función para escribir en el archivo de viajes  
+const writeViajesFile = (viajes) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(FILE_PATH, JSON.stringify(viajes, null, 2), 'utf-8', (err) => {
+      if (err) {
+        return reject('Error al guardar los datos de los viajes');
+      }
+      resolve();
+    });
+  });
+};
 
-// Ruta PUT para actualizar un viaje
+// Función para actualizar el archivo de viajes
 router.put('/Actualizar-Viajes', async (req, res) => {
   try {
     const { id_conductor, latitud_conductor, longitud_conductor, id_cliente } = req.body;
 
-    // Leer los viajes desde el archivo
+    // Leer el archivo de viajes
     const viajes = await readViajesFile();
 
     // Buscar el viaje donde el id_conductor es 0 y el id_cliente coincide
-    const viajeIndex = viajes.findIndex(viaje =>
+    const viajeIndex = viajes.findIndex(viaje => 
       viaje.id_conductor === 0 && viaje.id_cliente === parseInt(id_cliente)
     );
 
@@ -110,7 +51,7 @@ router.put('/Actualizar-Viajes', async (req, res) => {
     viajes[viajeIndex].latitud_conductor = latitud_conductor;
     viajes[viajeIndex].longitud_conductor = longitud_conductor;
 
-    // Guardar los cambios en el archivo
+    // Escribir los cambios en el archivo de viajes
     await writeViajesFile(viajes);
 
     res.status(200).json({ message: 'Viaje actualizado exitosamente' });
@@ -120,4 +61,49 @@ router.put('/Actualizar-Viajes', async (req, res) => {
   }
 });
 
+
+// Ruta POST para registrar un viajes
+router.post('/Registrar-Viajes', async (req, res) => {
+  try {
+    const nuevoviajes = req.body;
+
+    // Leer los viajes desde el archivo
+    const viajes = await readViajesFile();
+
+    // Generar un nuevo ID para el cliente
+    const nuevoId = viajes.length > 0 
+      ? viajes[viajes.length - 1].id_viaje + 1
+      : 1;
+
+    // Asignar el nuevo ID al conductor
+    nuevoviajes.id_viaje = nuevoId;
+
+    // Agregar el nuevo conductor al array
+    viajes.push(nuevoviajes);
+
+    // Escribir los datos actualizados en el archivo
+    await writeViajesFile(viajes);
+
+    // Enviar una respuesta exitosa
+    res.status(201).json({
+      message: 'viajes registrado exitosamente',
+      viajes: nuevoviajes
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Ocurrió un error al registrar el viajes' });
+  }
+});
+
+// Ruta GET para obtener todos los viajes
+router.get('/ver-viajes', async (req, res) => {
+    try {
+      const viajes = await readViajesFile();
+      res.status(200).json(viajes);  // Responde con la lista de viajes
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Ocurrió un error al obtener los viajes' });
+    }
+  });
+  
 module.exports = router;

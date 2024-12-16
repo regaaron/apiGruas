@@ -1,6 +1,6 @@
 [
   {
-    "nombre": "aaron123",
+    "nombre": "aaron",
     "apellido": "lopez",
     "direccion": "calle mar del norte 209",
     "telefono": "4493877833",
@@ -29,7 +29,7 @@
     "ubicacion": {
       "latitud": 21.916697,
       "longitud": -102.314467,
-      "activo": true,
+      "activo": false,
       "atendido": false
     },
     "password": "12345",
@@ -69,30 +69,10 @@
     "ubicacion": {
       "latitud": 21.920452,
       "longitud": -102.299874,
-      "activo": true,
+      "activo": false,
       "atendido": false
     },
     "password": "12345",
-    "solicitud": {
-      "espera": false,
-      "usuario": 0
-    },
-    "aceptada": false
-  },
-  {
-    "nombre": "aaron",
-    "apellido": "lopez",
-    "direccion": "calle 10",
-    "telefono": "44938123",
-    "email": "aaron_lopez222@hotmail.com",
-    "password": "aaron",
-    "id": 5,
-    "ubicacion": {
-      "latitud": null,
-      "longitud": null,
-      "activo": true,
-      "atendido": false
-    },
     "solicitud": {
       "espera": false,
       "usuario": 0

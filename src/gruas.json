@@ -14,10 +14,10 @@
     "id": 2
   },
   {
-    "modelo": "mo",
-    "numeroDeSerie": "ser",
-    "placa": "pla",
-    "tipoDeGrua": "ti",
+    "modelo": "modelo3",
+    "numeroDeSerie": "serie3",
+    "placa": "placa3",
+    "tipoDeGrua": "tipo3",
     "id": 3
   }
 ]
