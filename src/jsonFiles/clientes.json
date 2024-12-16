@@ -62,5 +62,21 @@
       "conductor": 0
     },
     "telefono": "4827264"
+  },
+  {
+    "apellido": "lopez aaron",
+    "direccion": "jfj que me lo dijera ",
+    "email": "aaron@gmail.com",
+    "id": 5,
+    "nombre": "aaron",
+    "password": "4321",
+    "ubicacion": {
+      "latitud": 21.916697,
+      "longitud": -102.314467,
+      "activo": false,
+      "atendido": false,
+      "conductor": 0
+    },
+    "telefono": "4827264"
   }
 ]

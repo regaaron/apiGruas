@@ -20,8 +20,8 @@ router.post('/encrypt', async (req, res) => {
 
 // Ruta para desencriptar `clientes.encrypted`
 router.post('/decrypt', async (req, res) => {
-  const inputFileName = 'clientes.encrypted';
-  const outputFileName = 'clientes.json';
+  const inputFileName = 'conductores.encrypted';
+  const outputFileName = 'conductores.json';
 
   try {
     const message = await decryptFile(`../encripFiles/${inputFileName}`, `../encripFiles/${outputFileName}`);

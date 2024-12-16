@@ -98,5 +98,25 @@
       "usuario": 0
     },
     "aceptada": false
+  },
+  {
+    "nombre": "aaron",
+    "apellido": "ruiz",
+    "direccion": "calle 10",
+    "telefono": "44938123",
+    "email": "aaron_lopez222@hotmail.com",
+    "password": "aaron",
+    "id": 6,
+    "ubicacion": {
+      "latitud": null,
+      "longitud": null,
+      "activo": true,
+      "atendido": false
+    },
+    "solicitud": {
+      "espera": false,
+      "usuario": 0
+    },
+    "aceptada": false
   }
 ]
