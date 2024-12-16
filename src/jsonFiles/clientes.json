@@ -9,9 +9,9 @@
     "ubicacion": {
       "latitud": 21.84392547607422,
       "longitud": -102.30692291259766,
-      "activo": true,
-      "atendido": true,
-      "conductor": 3
+      "activo": false,
+      "atendido": false,
+      "conductor": 0
     },
     "id": 1
   },
